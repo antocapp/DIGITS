@@ -4,6 +4,7 @@ from __future__ import absolute_import
 import os
 import re
 
+import base64
 import caffe.draw
 import caffe_pb2
 from google.protobuf import text_format
@@ -142,7 +143,7 @@ class CaffeFramework(Framework):
         if not net.name:
             net.name = 'Network'
         return ('<image src="data:image/png;base64,' +
-                caffe.draw.draw_net(net, 'UD').encode('base64') +
+                base64.encodebytes(caffe.draw.draw_net(net, 'UD')).decode().strip() +
                 '" style="max-width:100%" />')
 
     @override
