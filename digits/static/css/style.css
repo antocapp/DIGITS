@@ -18,6 +18,10 @@ div.progress div.progress-bar {
     width: 70%!important;
 }
 
+.full-bootbox > .modal-dialog {
+    width: 95%!important;
+}
+
 /* Upload Button */
 .file-upload {
     position: relative;
@@ -149,4 +153,8 @@ ul.inline li {
     border-radius: 5px;
     margin-top:10px;
     margin-bottom:10px;
+}
+
+div.exploration {
+    margin-top: 10px;
 }

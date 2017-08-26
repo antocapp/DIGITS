@@ -7,7 +7,7 @@ import os
 import flask
 from flask.ext.socketio import SocketIO
 from gevent import monkey
-monkey.patch_all()
+monkey.patch_all(thread=False)
 
 from .config import config_value  # noqa
 from digits import utils  # noqa

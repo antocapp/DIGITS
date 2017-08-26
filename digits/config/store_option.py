@@ -26,14 +26,12 @@ def validate(value):
 
 def load_url_list():
     """
-    Return Model 
-Store URL's as a list
+    Return Model Store URL's as a list
     Verify if each URL is valid
     """
     if 'DIGITS_MODEL_STORE_URL' in os.environ:
         url_list = os.environ['DIGITS_MODEL_STORE_URL']
     else:
-        # If no model store is given, use Nvidia's supplied one.
         url_list = "http://developer.download.nvidia.com/compute/machine-learning/modelstore/5.0"
 
     return validate(url_list).split(',')
