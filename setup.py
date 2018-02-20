@@ -1,14 +1,14 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # Copyright (c) 2016-2017, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2018, Jed Frey.  All rights reserved.
 
 import os.path
 import setuptools
+# Get current __version__
+from digits import __version__
+
 
 LOCAL_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# Get current __version__
-version_locals = {}
-execfile(os.path.join(LOCAL_DIR, 'digits', 'version.py'), {}, version_locals)
 
 # Get requirements
 requirements = []
@@ -28,7 +28,7 @@ with open(os.path.join(LOCAL_DIR, 'requirements_test.txt'), 'r') as infile:
 
 setuptools.setup(
     name='digits',
-    version=version_locals['__version__'],
+    version=__version__,
     description="NVIDIA's Deep Learning GPU Training System",
     url='https://developer.nvidia.com/digits',
     author='DIGITS Development Team',
@@ -37,8 +37,7 @@ setuptools.setup(
     classifiers=[
         'Framework :: Flask',
         'License :: OSI Approved :: BSD License',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 2 :: Only',
+        'Programming Language :: Python :: 3',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
     ],
     keywords='nvidia digits',
